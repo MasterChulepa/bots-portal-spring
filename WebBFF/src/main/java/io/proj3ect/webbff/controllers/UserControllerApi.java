@@ -1,14 +1,10 @@
-package io.proj3ect.controllers;
+package io.proj3ect.webbff.controllers;
 
-import io.proj3ect.data.UserRepositoryBFF;
-import io.proj3ect.models.UserModel;
-import io.proj3ect.service.UserService;
+import io.proj3ect.webbff.models.UserModel;
+import io.proj3ect.webbff.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/users", produces = "application/json")
@@ -27,6 +23,7 @@ public class UserControllerApi {
     }
 
     @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public UserModel getUser(@PathVariable("id") Long id){
         return userService.findById(id);
     }

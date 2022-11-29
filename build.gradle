@@ -6,7 +6,8 @@ plugins {
 
 def javaProjects = [
         project(":tg-bot"),
-        project(":kafka-consumer")
+        project(":kafka-consumer"),
+        project(":WebBFF")
 ]
 
 subprojects{

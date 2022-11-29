@@ -1,4 +1,4 @@
-package io.proj3ect.exceptions;
+package io.proj3ect.webbff.exceptions;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

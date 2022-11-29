@@ -1,8 +1,8 @@
-package io.proj3ect.service;
+package io.proj3ect.webbff.service;
 
-import io.proj3ect.data.UserRepositoryBFF;
-import io.proj3ect.exceptions.UserNotFoundException;
-import io.proj3ect.models.UserModel;
+import io.proj3ect.webbff.data.UserRepositoryBFF;
+import io.proj3ect.webbff.exceptions.UserNotFoundException;
+import io.proj3ect.webbff.models.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +12,13 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     UserRepositoryBFF userRepositoryBFF;
+    KafkaProducer kafkaProducer;
 
     @Autowired
-    public UserService(UserRepositoryBFF userRepositoryBFF){
+    public UserService(UserRepositoryBFF userRepositoryBFF,
+                       KafkaProducer kafkaProducer){
         this.userRepositoryBFF = userRepositoryBFF;
+        this.kafkaProducer = kafkaProducer;
     }
 
     public UserModel findById(Long id){
@@ -28,6 +31,7 @@ public class UserService {
     }
 
     public UserModel saveUser(UserModel user) {
-        return userRepositoryBFF.save(user);
+       kafkaProducer.sendMessage(user);
+       return user;
     }
 }

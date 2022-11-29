@@ -1,7 +1,7 @@
-package io.proj3ect.deserialization;
+package io.proj3ect.kafkaconsumer.deserialization;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.proj3ect.models.UserModel;
+import io.proj3ect.kafkaconsumer.models.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.serialization.Deserializer;
 

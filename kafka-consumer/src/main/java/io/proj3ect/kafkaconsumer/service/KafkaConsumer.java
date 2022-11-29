@@ -1,7 +1,7 @@
-package io.proj3ect.service;
+package io.proj3ect.kafkaconsumer.service;
 
-import io.proj3ect.data.UserRepository;
-import io.proj3ect.models.UserModel;
+import io.proj3ect.kafkaconsumer.data.UserRepository;
+import io.proj3ect.kafkaconsumer.models.UserModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

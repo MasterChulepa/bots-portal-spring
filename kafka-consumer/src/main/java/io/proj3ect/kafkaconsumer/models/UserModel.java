@@ -1,4 +1,4 @@
-package io.proj3ect.models;
+package io.proj3ect.kafkaconsumer.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

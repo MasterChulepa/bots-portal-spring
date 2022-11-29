@@ -1,7 +1,7 @@
-package io.proj3ect.advices;
+package io.proj3ect.webbff.advices;
 
-import io.proj3ect.exceptions.AppError;
-import io.proj3ect.exceptions.UserNotFoundException;
+import io.proj3ect.webbff.exceptions.AppError;
+import io.proj3ect.webbff.exceptions.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

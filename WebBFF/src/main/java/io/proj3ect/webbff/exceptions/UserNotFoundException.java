@@ -1,4 +1,4 @@
-package io.proj3ect.exceptions;
+package io.proj3ect.webbff.exceptions;
 
 public class UserNotFoundException extends RuntimeException{
     public UserNotFoundException(String message){

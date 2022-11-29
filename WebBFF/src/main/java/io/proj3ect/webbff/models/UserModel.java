@@ -1,4 +1,4 @@
-package io.proj3ect.models;
+package io.proj3ect.webbff.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
