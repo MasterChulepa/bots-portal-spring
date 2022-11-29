@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+def javaProjects = [
+        project(":tg-bot"),
+        project(":kafka-consumer")
+]
+
+subprojects{
+    plugins.apply("java")
+    plugins.apply("org.springframework.boot")
+    plugins.apply("io.spring.dependency-management")
+    }
+allprojects{
+    group = 'io.proj3ect'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:3.0.0'
+        }
+    }
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        implementation 'org.springframework.boot:spring-boot-starter'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+}
+configure(javaProjects) {
+    dependencies {
+        implementation 'org.springframework.kafka:spring-kafka'
+    }
+
+}

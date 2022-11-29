@@ -1,0 +1,8 @@
+rootProject.name = 'bots-portal-spring'
+
+include 'tg-bot'
+include 'kafka-consumer'
+include 'kafka-consumer'
+include 'BFF'
+include 'WebBFF'
+

@@ -1,0 +1,5 @@
+dependencies {
+    implementation 'com.vdurmont:emoji-java:5.1.1'
+    implementation group: 'org.telegram', name: 'telegrambots', version: '6.3.0'
+    implementation group: 'org.telegram', name: 'telegrambots-abilities', version: '6.3.0'
+}
