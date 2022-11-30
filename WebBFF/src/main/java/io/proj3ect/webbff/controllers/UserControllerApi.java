@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path = "/users", produces = "application/json")
-@CrossOrigin(origins = "*")
 public class UserControllerApi {
     private final UserService userService;
 
@@ -32,4 +32,10 @@ public class UserControllerApi {
     public UserModel postUser(@RequestBody UserModel user) {
         return userService.saveUser(user);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") Long id){
+        this.userService.deleteUserById(id);
+    }
+
 }

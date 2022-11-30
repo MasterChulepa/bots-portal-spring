@@ -1,0 +1,11 @@
+<div class="user-container">
+  <img class="user-img" src="https://img.icons8.com/ios/250/null/user--v1.png"/>
+  <h2 class="user-name">{{user.username}}</h2>
+  <div class="user-description">
+    User Id: {{user.id}}, <br>
+    Firstname: {{user.firstName}},<br>
+    Lastname: {{user.lastName}},<br>
+    Registered At: {{user.registeredAt}}
+  </div>
+  <button class=" btn delete-btn" (click)="deleteUser()">x</button>
+</div>

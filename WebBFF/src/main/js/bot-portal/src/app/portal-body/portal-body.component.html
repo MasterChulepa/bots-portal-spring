@@ -1,0 +1,9 @@
+<div class="container">
+  <app-filter-input (filterEvent)="onFilterUsers($event)"></app-filter-input>
+  <button class="btn" (click)="update()">Update info</button>
+  <div class="main-field">
+    <app-user-info
+      *ngFor="let user of filteredUsers" [user]="user"
+      (deleteUserEvent)="onDeleteUser($event)"></app-user-info >
+  </div>
+</div>

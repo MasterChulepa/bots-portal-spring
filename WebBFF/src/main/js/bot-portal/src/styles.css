@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.btn{
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: cadetblue;
+  padding: 6px;
+  color: aliceblue;
+}
+.btn.delete-btn{
+  background-color: brown;
+}
+input{
+  padding: 6px;
+  border-radius: 12px;
+}

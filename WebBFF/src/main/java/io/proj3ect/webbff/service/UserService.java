@@ -34,4 +34,7 @@ public class UserService {
        kafkaProducer.sendMessage(user);
        return user;
     }
+    public void deleteUserById(Long id){
+        userRepositoryBFF.deleteById(id);
+    }
 }
